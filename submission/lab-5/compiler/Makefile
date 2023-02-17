@@ -1,0 +1,37 @@
+
+
+PARSE = sclp
+SCAN = sclp
+OUT = sclp
+FLAGS = -std=c++11
+
+
+sclp	: lex.yy.o y.tab.o sclp.o ast.o tac.o rtl.o
+	@g++ $(FLAGS) -o $(OUT) sclp.o tac.o ast.o rtl.o lex.yy.o y.tab.o -ly
+
+sclp.o 	: sclp.cpp sclp.h ast.h tac.h rtl.h
+	@g++ $(FLAGS) -c sclp.cpp
+
+ast.o 	: ast.cpp ast.h tac.h rtl.h
+	@g++ $(FLAGS) -c ast.cpp
+
+tac.o 	: tac.cpp tac.h rtl.h
+	@g++ $(FLAGS) -c tac.cpp
+
+rtl.o 	: rtl.cpp rtl.h
+	@g++ $(FLAGS) -c rtl.cpp
+
+y.tab.o y.tab.h  : $(PARSE).y ast.h tac.h rtl.h
+	@yacc -dv $(PARSE).y
+	@g++ $(FLAGS) -c y.tab.c
+
+
+lex.yy.o  : $(SCAN).l y.tab.h sclp.h ast.h tac.h rtl.h
+	@lex --yylineno $(SCAN).l
+	@g++ $(FLAGS) -c lex.yy.c
+
+
+clean :
+	@rm -f lex.yy.* y.tab.*  *.o *.output a.out
+	@rm -f $(OUT)
+	@rm -f *.toks *.ast *.log *.tac *.rtl

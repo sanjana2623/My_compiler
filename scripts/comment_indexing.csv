@@ -1,0 +1,20 @@
+comment indexing 
+
+101	iLoad:    	regn <- num         ;; Loading integer number num
+102	iLoad.d:    regff <- num.num    ;; Loading float number num.num
+
+103	iLoad:    	regn <- num    	;; Loading num in regn to indicate syscall to print integer value
+104	iLoad:    	regn <- num    	;; Loading num in regn to indicate syscall to print double value
+105	iLoad:    	regn <- num    	;; Loading num in regn to indicate syscall to print string value
+
+106	iLoad:    	regn <- num    	;; Loading num in regn to indicate syscall to read integer value
+107 iLoad:    	regn <- num    	;; Loading num in regn to indicate syscall to read double value
+
+108	iLoad:    	regn <- num       	;; Moving the value to be printed into register regn
+108	iLoad.d:    regff <- num.num    ;; Moving the value to be printed into register regff
+108	load:    	regn <- NAME    	;; Moving the value to be printed into register regn
+108	load:    	regn <- NAMENAME    ;; Moving the value to be printed into register regn
+108	load.d:    	regff <- NAME    	;; Moving the value to be printed into register regff
+
+109 store:    	NAME <- regn    	;; Moving the read value from register regn
+109	store.d:    	NAME <- regff   ;; Moving the read value from register regff

@@ -1,0 +1,24 @@
+index of Reg_alloc_class::reg_isused_vec vector
+and corresponding register to be print
+
+ General   |  FLOAT
+ 0 : v0    | 20 : f2 
+ 1 : t0    | 21 : f4 
+ 2 : t1    | 22 : f6 
+ 3 : t2    | 23 : f8 
+ 4 : t3    | 24 : f10
+ 5 : t4    | 25 : f12
+ 6 : t5    | 26 : f14
+ 7 : t6    | 27 : f16
+ 8 : t7    | 28 : f18
+ 9 : t8    | 29 : f20
+10 : t9    | 30 : f22
+11 : s0    | 31 : f24
+12 : s1    | 32 : f26
+13 : s2    | 33 : f28
+14 : s3    | 34 : f30
+15 : s4    | 35 : f0 
+16 : s5
+17 : s6
+18 : s7
+19 : a0

@@ -1,0 +1,23 @@
+________________________________________________________________
+moodle ::::::::::
+
+moodle --listlabs
+moodle --status    --lab Assignment-5
+moodle --download  --lab Assignment-5
+moodle --download  --lab Assignment-5 --file group50.tar.gz
+moodle --upload    --lab Assignment-5 --file group50.tar.gz
+________________________________________________________________
+git :::::::::::::
+
+git clone git@coffre:group50
+git clone git://coffre/A5-resources
+git clone git://coffre/A4-evaluation
+________________________________________________________________
+tar :::::::::::::
+
+#to compress
+tar -cvzf group50.tar.gz  group50/
+
+#to extract
+tar -xvzf group50.tar.gz 
+________________________________________________________________
